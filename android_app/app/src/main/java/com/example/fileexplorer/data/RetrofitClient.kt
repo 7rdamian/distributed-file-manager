@@ -47,7 +47,7 @@ object RetrofitClient {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create()) // Converts JSON from server to FileItem objects
+            .addConverterFactory(GsonConverterFactory.create()) 
             .build()
             .create(ApiService::class.java)
     }
