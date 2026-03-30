@@ -1,5 +1,6 @@
 package com.example.fileexplorer.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -15,7 +16,10 @@ import androidx.compose.ui.unit.dp
 import com.example.fileexplorer.model.FileItem
 
 @Composable
-fun FileRow(file: FileItem, onDeleteClick: () -> Unit) {
+fun FileRow(file: FileItem,
+            onDeleteClick: () -> Unit,
+            onFileClick: () -> Unit
+) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -26,13 +30,13 @@ fun FileRow(file: FileItem, onDeleteClick: () -> Unit) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .clickable { onFileClick() }
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
                 imageVector = if (file.isDirectory) Icons.Default.Folder else Icons.Default.Description,
                 contentDescription = "File Icon",
-                // Make folders purple and files light grey
                 tint = if (file.isDirectory) Color(0xFFBB86FC) else Color.LightGray,
                 modifier = Modifier.size(40.dp)
             )
