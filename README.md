@@ -1,8 +1,8 @@
 # Android Project
 
 ## Student Information
-**Name:** [Your Name]  
-**Student ID:** [Your ID]  
+**Name:** Damian Rosu  
+**Student ID:** 1325
 **Course:** Android Development  
 
 ## Project Title
