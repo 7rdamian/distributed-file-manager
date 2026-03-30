@@ -9,7 +9,7 @@
 TrueNAS File Explorer App
 
 ## Description
-This is my final project for the Android Development course[cite: 8, 12]. It is a client-server application that lets you connect to a private TrueNAS server to manage your files remotely[cite: 72]. Instead of just using a local database, the Android app connects to a custom Java Spring Boot server, which then reads and writes files directly to a physical NAS via an NFS mount. 
+This is my final project for the Android Development course. It is a client-server application that lets you connect to a private TrueNAS server to manage your files remotely. Instead of just using a local database, the Android app connects to a custom Java Spring Boot server, which then reads and writes files directly to a physical NAS via an NFS mount. 
 
 ## Features
 - **Firebase Login:** Users must log in using Firebase Authentication before accessing any files. The token is verified by the Spring Boot server.
