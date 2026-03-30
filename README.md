@@ -19,10 +19,11 @@ This is my final project for the Android Development course[cite: 8, 12]. It is 
 - **Live Sync:** Because the server uses an NFS mount, if you drop a file into the folder on your laptop, it shows up in the app immediately.
 
 ## Screenshots
-![Screenshot_2026-03-30-06-28-08-158_com example fileexplorer](https://github.com/user-attachments/assets/c9e25549-b7af-40e3-83f3-95b428ebe6e9)
-![Screenshot_2026-03-30-06-28-33-547_com example fileexplorer](https://github.com/user-attachments/assets/f994db1f-9be2-4358-9145-c1b0f836a3ee)
-![Screenshot_2026-03-30-06-29-01-321_com example fileexplorer](https://github.com/user-attachments/assets/3208788f-9a68-45c7-bc3a-a455e6fe1c1f)
-![Screenshot_2026-03-30-06-29-14-934_com example fileexplorer](https://github.com/user-attachments/assets/8850c31a-76a6-4ee7-8a8c-160f141ebce2)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c9e25549-b7af-40e3-83f3-95b428ebe6e9" width="250" />
+  <img src="https://github.com/user-attachments/assets/f994db1f-9be2-4358-9145-c1b0f836a3ee" width="250" />
+  <img src="https://github.com/user-attachments/assets/3208788f-9a68-45c7-bc3a-a455e6fe1c1f" width="250" />
+</div>
 
 ## Technologies Used
 - **Android Client:** Kotlin, Jetpack Compose, MVVM Architecture
