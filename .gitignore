@@ -1,0 +1,15 @@
+# IDE Files (Android Studio / IntelliJ)
+.idea/
+*.iml
+*.iws
+local.properties
+
+# Logs
+.kotlin/
+*.log
+
+# Build folders (Just in case)
+build/
+target/
+
+google-services.json
