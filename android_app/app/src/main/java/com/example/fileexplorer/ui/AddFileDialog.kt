@@ -22,7 +22,6 @@ fun AddFileDialog(
         text = {
             Column(modifier = Modifier.padding(top = 8.dp)) {
 
-                // The text box where the user types
                 OutlinedTextField(
                     value = fileName,
                     onValueChange = { fileName = it },
@@ -32,7 +31,6 @@ fun AddFileDialog(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // A Row to put the Checkbox and Text side-by-side
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Checkbox(
                         checked = isFolder,

@@ -19,7 +19,6 @@ class AuthInterceptor : Interceptor {
                 val token = tokenResult.token
 
                 if (token != null) {
-                    // ADD THIS LOG LINE:
                     android.util.Log.d("RetrofitAuth", "Token found and attached!")
                     requestBuilder.addHeader("Authorization", "Bearer $token")
                 } else {

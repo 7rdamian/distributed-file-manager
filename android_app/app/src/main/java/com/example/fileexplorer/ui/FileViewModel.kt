@@ -6,8 +6,8 @@ import android.net.Uri
 import android.webkit.MimeTypeMap
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.getValue  // REQUIRED for 'by'
-import androidx.compose.runtime.setValue  // REQUIRED for 'by'
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -78,7 +78,7 @@ class FileViewModel : ViewModel() {
                 RetrofitClient.apiService.saveFileContent(fileName, fileContent)
                 isSaving = false
                 closeEditor()
-                fetchFiles() // Refresh list after saving
+                fetchFiles()
             } catch (e: Exception) {
                 isSaving = false
                 e.printStackTrace()

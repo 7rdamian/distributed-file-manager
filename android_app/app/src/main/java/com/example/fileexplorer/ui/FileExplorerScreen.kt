@@ -26,11 +26,9 @@ fun FileExplorerScreen(viewModel: FileViewModel = viewModel()) {
     val context = LocalContext.current
     var showDialog by remember { mutableStateOf(false) }
 
-    // 1. Logic Gate: If we are editing, swap the screen entirely
     if (viewModel.currentEditingFile != null) {
         FileEditorScreen(viewModel = viewModel)
     } else {
-        // 2. Otherwise, show your original Scaffold with the list
         Scaffold(
             topBar = {
                 TopAppBar(
