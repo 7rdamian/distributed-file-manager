@@ -1,22 +1,39 @@
-# Android Project
+# TrueNAS Cloud File Explorer
 
-## Student Information
-**Name:** Damian Rosu  
-**Student ID:** 1325
-**Course:** Android Development  
+A full-stack distributed cloud storage management system. This project consists of a custom Spring Boot REST API backend that interfaces with storage systems (like TrueNAS), and a modern native Android application built with Kotlin and Jetpack Compose for seamless user access.
 
-## Project Title
-TrueNAS File Explorer App
+## Key Features
 
-## Description
-This is my final project for the Android Development course. It is a client-server application that lets you connect to a private TrueNAS server to manage your files remotely. Instead of just using a local database, the Android app connects to a custom Java Spring Boot server, which then reads and writes files directly to a physical NAS via an NFS mount. 
+* **Full-Stack Architecture:** Clean separation of concerns between the Java backend API and the Kotlin mobile client.
+* **Secure Authentication:** Integrates **Firebase Authentication**. The Android client retrieves a JWT token which is then strictly validated by a custom Spring Security filter chain on the backend before allowing file access.
+* **Complete File Management:** Users can view, add, edit, and delete files stored on the distributed cloud directly from their mobile device.
+* **Reactive Mobile UI:** The frontend is built entirely using Jetpack Compose, utilizing the MVVM (Model-View-ViewModel) pattern and Retrofit for asynchronous network calls.
+* **Robust Backend:** A Java Spring Boot application utilizing Spring Web and Firebase Admin SDK to handle secure API routing.
 
-## Features
-- **Firebase Login:** Users must log in using Firebase Authentication before accessing any files. The token is verified by the Spring Boot server.
-- **Browse and Manage:** View the list of files on the server, create new folders, and delete files.
-- **In-App Text Editor:** Tap on any `.txt` file to open a custom Jetpack Compose screen where you can edit and save the text directly to the server.
-- **Open PDFs and Images:** If you tap a complex file (like a PDF), the app downloads it to the device's cache and uses Android's `FileProvider` to open it in the phone's default viewer app.
-- **Live Sync:** Because the server uses an NFS mount, if you drop a file into the folder on your laptop, it shows up in the app immediately.
+## Tech Stack
+
+* **Frontend (Mobile):** Kotlin, Android SDK, Jetpack Compose, Retrofit, ViewModel
+* **Backend:** Java, Spring Boot, Spring Security, Maven
+* **Authentication:** Firebase Auth & Firebase Admin SDK
+* **Storage:** TrueNAS / Distributed File System
+
+## How to Run
+
+### 1. Backend Setup (Spring Boot)
+1. Navigate to the `backend/demo` directory.
+2. You will need to update the `application.properties` file with a valid local folder path or NFS mount.
+3. Ensure you have your Firebase Admin Service Account JSON key configured in the project.
+4. Run the backend using Maven:
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+5. The API will start on localhost:8080.
+
+### 2. Frontend Setup (Android)
+1. Open the android_app folder in Android Studio.
+2. Update the BASE_URL in RetrofitClient.kt to match your backend's IP address (use 10.0.2.2 if testing on an Android Emulator).
+3. Connect your Firebase project via the google-services.json file.
+4. Build and run the app on an emulator or physical device.
 
 ## Screenshots
 <div align="center">
@@ -25,19 +42,6 @@ This is my final project for the Android Development course. It is a client-serv
   <img src="https://github.com/user-attachments/assets/3208788f-9a68-45c7-bc3a-a455e6fe1c1f" width="250" />
 </div>
 
-## Technologies Used
-- **Android Client:** Kotlin, Jetpack Compose, MVVM Architecture
-- **Networking:** Retrofit, OkHttp (with custom Interceptors for Auth tokens)
-- **Backend Server:** Java, Spring Boot, Spring Security 
-- **Cloud Service:** Firebase Authentication
-- **Infrastructure:** TrueNAS, Ubuntu, NFS, Git for version control 
+## What I Learned
 
-## How to Run
-1. **Clone the repository** to your local machine.
-2. **Start the Backend:** - Open the `backend` folder in your Java IDE.
-   - You will need to update the `application.properties` file with a valid local folder path or NFS mount.
-   - Run the Spring Boot application.
-3. **Configure the App:**
-   - Open the Android project in Android Studio.
-   - Go to `RetrofitClient.kt` and change the `BASE_URL` to match the local IP address of the machine running the Spring Boot server.
-4. **Run:** Build and run the app on an Android emulator or physical device.
+This project bridged the gap between frontend and backend development. I learned how to architect a RESTful API using Spring Boot, secure endpoints using custom JWT token filters with Spring Security, and access those APIs asynchronously on a mobile device using Retrofit and Kotlin Coroutines.
